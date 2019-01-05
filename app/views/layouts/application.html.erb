@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ChatAppRails</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>ChatAppRails</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+<% if current_user %>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">Chat App</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><%= link_to('Log out', destroy_user_session_path, method: :delete) %></li>
+      </ul>
+    </div>
+<% end %>
+</nav>
+<%= yield %>
+</body>
 </html>

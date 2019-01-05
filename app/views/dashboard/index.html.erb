@@ -1,12 +1,5 @@
-<nav>
-  <div class="nav-wrapper">
-    <a href="#" class="brand-logo">Chat App</a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      <li><%= link_to('Log out', destroy_user_session_path, method: :delete) %></li>
-    </ul>
-  </div>
-</nav>
-
 <h1 class="container center-align" style="color: #B00100; padding-top: 20px">Welcome to the Dashboard</h1>
 
-<%= link_to 'Messages', messages_path %>
+<div class="waves-effect waves-light btn"><i class="material-icons left">message</i>
+  <%= link_to 'Messages', messages_path, style: "color: #ffffff" %>
+</div>
